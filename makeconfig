@@ -1,0 +1,33 @@
+PROGNAME = mk
+VERSION = 7
+
+EXEDIR=${HOME}/exe
+SHRDIR=${HOME}/shr
+INCDIR=${SHRDIR}/inc
+OBJDIR=${SHRDIR}/obj
+MANDIR=${SHRDIR}/man
+APPDIR=${HOME}/app
+
+OBJTYPE     = 386
+#OBJTYPE     = arm
+#OBJTYPE     = x86_64
+#OBJTYPE     = sun4u
+
+CC = tcc
+LD = ${CC}
+STRIP = strip
+
+DOTINC = -I.
+INC9 = -I${INCDIR}/9
+MLIB = -lm
+OBJ9 = ${OBJDIR}/9.a
+
+DEFS = -DPLAN9PORT -D_DEFAULT_SOURCE -DPROGNAME=\"${PROGNAME}\"
+INCS = ${DOTINC} ${INC9}
+LIBS = ${MLIB}
+LDFLAGS  = ${LD_STATIC_FLAG}
+
+CFILES = arc.c archive.c bufblock.c env.c file.c graph.c job.c lex.c \
+	main.c match.c mk.c parse.c recipe.c rc.c rule.c run.c sh.c \
+	shell.c shprint.c symtab.c var.c varsub.c word.c unix.c
+AFILES = ${OBJ9}

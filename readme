@@ -1,0 +1,21 @@
+# mk
+mk - file control system.
+
+## Build
+This package is provided for my project to resolve chicken-egg problem.
+"mk" is supposed to be built anywhere and after it to be used to build other programs.
+So there's no way you build it with itself.
+Building give you one binary file "mk" and you should put it somewhere to run by hand.
+### make
+``
+	% make
+	% make strip # It deletes exceed symbols to make binary file less size.
+``
+
+This is a Unix port of mk,
+originally done for the Inferno operating system.
+
+Russ Cox repackaged this to build as a standalone
+Unix program.  Send comments about packaging to
+Russ Cox <rsc@post.harvard.edu>
+
