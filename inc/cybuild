@@ -16,12 +16,6 @@ $HFILES :N:
 $YHFILES $YCFILES : $YFILES
 	$YACC -d $YFILES
 $YFILES :N:
-install:V: $EXEDIR/$TARG
-$EXEDIR/$TARG :V: strip $EXEDIR
-	cp -f $TARG $EXEDIR/$TARG
-$INSTALLDIRS :V:
-	mkdir -p $target
-clean:V:
-	rm -f $TARG $OFILES $YHFILES $YCFILES $YOFILES
-uninstall:V:
-	rm -f $EXEDIR/$TARG
+clean:
+	rm -f $TARG $OFILES $YOFILES $YHFILES $YCFILES
+<$MKINCDIR/std/install
