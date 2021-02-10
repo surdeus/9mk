@@ -2,9 +2,19 @@ install:V: install-$MKSHELL
 install-sh:V: $TARG
 	if test -d shr ; then cp -rf shr $SHRDIR/.. ; fi
 	if test -d app ; then mkdir -p $APPDIR/$PROGNAME && cp -rf app/* $APPDIR/$PROGNAME/ ; fi
-	if test -d exe ; then cp -rf exe $EXEDIR/.. ; fi
+	if test -d exe ; then
+		cp -rf exe $EXEDIR/..
+		files=`basename -a $(ls exe)`
+		for i in $files ; do
+			chmod 0755 $EXEDIR/$i
+		done
+	 fi
 install-rc:V: $TARG
 	if(test -d shr) cp -rf shr $SHRDIR/..
 	if(test -d app){ mkdir -p $APPDIR/$PROGNAME && cp -rf app/* $APPDIR/$PROGNAME/ }
-	if(test -d exe) cp -rf exe $EXEDIR/..
+	if(test -d exe) {
+		cp -rf exe $EXEDIR/..
+		files = `{basename -a `{ls exe} }
+		chmod 0755 $EXEDIR/^$files 
+	}
 
