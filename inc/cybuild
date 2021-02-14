@@ -2,12 +2,13 @@
 INSTALLDIRS = $APPDIR $EXEDIR $SHRDIR
 OFILES = ${CFILES:%.c=%.o}
 YOFILES = ${YCFILES:%.c=%.o}
-TARG = $PROGNAME
+TARG = exe/$PROGNAME
 CFLAGS = $CPPFLAGS $DEFS $INCS $CFLAGS  
 all :V: $TARG
 strip :V: $TARG
 	$STRIP $TARG
 $TARG : $OFILES $YOFILES
+	mkdir -p exe
 	$LD -o $target $LDFLAGS $OFILES $YOFILES $AFILES $LIBS
 %.o : %.c 
 	$CC -c -o $target $CFLAGS $stem.c
