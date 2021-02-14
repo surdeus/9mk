@@ -39,6 +39,7 @@ main(int argc, char **argv)
 	 *  instead of sharing them
 	 */
 
+	setenv("MKINCDIR", unsharp("#u/app/mk/inc"), 0);
 	Binit(&bout, 1, OWRITE);
 	buf = newbuf();
 	whatif = 0;
