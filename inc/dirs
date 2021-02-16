@@ -1,0 +1,5 @@
+
+% :QV:
+	for(d in $DIRS){
+		echo 
+	}

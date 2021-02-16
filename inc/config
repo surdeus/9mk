@@ -25,6 +25,7 @@ UTILLIB = -lutil
 XINLIB = -lXinerama
 XINCPP = -DXINERAMA
 XTLIB = -lXt
+XILIB = -lXi
 XEXTLIB = -lXext
 DOTINC = -I.
 SECINC = -Isec
@@ -35,10 +36,12 @@ XRLIB = -lXrandr
 CURLIB = -lcurses
 PNGLIB = -lpng
 JPGLIB = -ljpeg
-
 OBJ9 = $OBJDIR/9.a
 INC9 = -I$INCDIR/9
-
+FRAMEOBJ = $OBJDIR/frame.a
+FRAMEINC = -I$INCDIR/frame
+XGOBJ = $OBJDIR/Xg.a
+XGINC = -I$INCDIR/Xg
 GCC = cc
 CC = tcc
 LD = $CC
