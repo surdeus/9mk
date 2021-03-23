@@ -11,3 +11,5 @@ $TARG : $OFILES
 	$LD -o $target $LDFLAGS $OFILES $AFILES $LIBS
 %.o : %.c $HFILES
 	$CC -c -o $target $CFLAGS $stem.c
+run :V: $TARG
+	exec ./$TARG $MKFLAGS

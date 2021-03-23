@@ -1,6 +1,7 @@
 % :V: %-$MKSHELL 
 %-sh :QV:
 	pwd=`pwd`
+	export pwd
 	for d in $DIRS ; do
 		echo "[ cd $d ; mk $stem]"
 		cd "$d" ; mk $MKFLAGS $stem ; cd "$pwd"
