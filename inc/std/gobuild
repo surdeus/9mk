@@ -1,0 +1,10 @@
+TARG = exe/$PROGNAME
+all :V: $TARG
+strip :V: $TARG.strip
+$TARG.strip : $TARG
+	cp -f $prereq $target
+	$STRIP $target
+$TARG :
+	mkdir -p exe
+	go build -o $target
+

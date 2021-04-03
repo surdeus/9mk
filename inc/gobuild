@@ -1,0 +1,7 @@
+# Compatible with pkg module for Golang.
+<$MKINCDIR/std/gobuild
+<$MKINCDIR/std/install
+clean:V:
+	rm -f $TARG && go clean
+uninstall:V:
+	rm -f $EXEDIR/$TARG
