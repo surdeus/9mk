@@ -1,0 +1,29 @@
+TARGNAMES = `{cd cmd && ls && cd ..}
+TARGS = ${TARGNAMES:%=exe/%}
+STRIPTARGS = ${TARGS:%=%.strip}
+
+all :V: build
+strip :V: $STRIPTARGS
+%.strip : %
+	cp -f $prereq $target
+	$STRIP $target
+
+build :V: build-$MKSHELL
+build-rc :V:
+	mkdir -p exe
+	pwd=`{pwd}
+	for(name in $TARGNAMES){
+		cd cmd/$name
+		go build -o $pwd/exe/$name
+		cd $pwd
+	}
+build-sh :V:
+	mkdir -p exe
+	pwd=`pwd`
+	for name in $TARGNAMES ; do
+		cd cmd/$name
+		go build -o $pwd/exe/$name
+		cd $pwd
+	done
+clean:V:
+	rm -f $TARGS $STRIPTARGS

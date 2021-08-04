@@ -1,5 +1,5 @@
 # Universal powerful simple C build file.
-<$MKINCDIR/std/build
+<$MKINCDIR/std/cbuild
 <$MKINCDIR/std/install
 clean:V:
 	rm -f $TARG $TARG.strip $OFILES
