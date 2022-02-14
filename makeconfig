@@ -18,7 +18,7 @@ LD = ${CC}
 STRIP = strip
 
 DOTINC = -I.
-INC9 = -I${INCDIR}/9
+INC9 = -I${INCDIR}
 MLIB = -lm
 OBJ9 = ${OBJDIR}/9.a
 
